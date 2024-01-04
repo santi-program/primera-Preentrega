@@ -1,5 +1,5 @@
 /* 
-    se debe entregar: 
+    Se debe entregar: 
         -estructura HTML del proyecto
         -variables de js necesarias
         -funciones esenciales del proceso a simular
