@@ -17,15 +17,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-black border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html"><img class="bi-apple" src="" alt="" /></a>
+          <a class="navbar-brand" href="../index.html"><img class="bi-apple" src="" alt="" /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -40,13 +39,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="./index.html">Inicio</a>
+                <a class="nav-link" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Iphone </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="./pages/productosBusqueda.html">Iphone 15P</a>
+                    <a class="dropdown-item" href="./pages/silla.html">Iphone 15P</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="./pages/silla.html">Iphone 13</a>
@@ -63,7 +62,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Wacth </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="./pages/apple.html">Series 8</a>
+                    <a class="dropdown-item" href="./pages/silla.html">Series 8</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="./pages/silla.html">Series 6</a>
@@ -77,33 +76,30 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/micuenta.html">Mi Cuenta</a>
+                <a class="nav-link" href="./micuenta.html">Mi Cuenta</a>
               </li>
             </ul>
           </div>
-          <a class="navbar-brand" href="./pages/carrito.html"><img class="bi-bag" src="" alt="" /></a>
+          <a class="navbar-brand" href="#"><img class="bi-bag" src="" alt="" /></a>
         </div>
       </nav>
     </header>
-
     <main>
-      <div class="container_busqueda">
-        <img class="foto-index" src="./assets/Mac.png" alt="" />
-        <div class="container-input">
-          <input class="barra" type="text" placeholder="Buscar" />
-          <ul class="resultadoBusqueda"></ul>
-          <div class="btn">
-            <i class="fa fa-search"></i>
+      <div class="carrito">
+        <div class="carrito-header">
+          <h2>Mi Carrito</h2>
+        </div>
+
+        <div id="productos-seleccionados"></div>
+
+        <div class="carrito-total">
+          <div class="fila">
+            <strong>Tu Total</strong>
+            <span class="carrito-precio-total"> $120.000,00 </span>
           </div>
+          <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i></button>
         </div>
       </div>
-
-      <div class="div-tit-p mt-4">
-        <h1>Productos</h1>
-      </div>
-      <div id="lista"></div>
-
-      <section id="vista-previa"></section>
 
       <div class="contacto-2">
         <input type="checkbox" id="button" />
@@ -112,20 +108,19 @@
           <a href="https://es-la.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
           <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
           <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/santiago-rodr%C3%ADguez-445106296/" target="_blank"><i class="bi bi-linkedin"></i></a>
         </div>
         <div class="button">
           <label for="button" class="icon-mas"><i class="bi bi-plus-lg"></i></label>
         </div>
       </div>
     </main>
-
     <footer>
       <div class="containerFooter">
         <div class="footerHorizontal">
           <div class="footerUrl">
             <h2>Apple Store</h2>
-            <p class="footerP">Descubre el innovador mundo de Apple: iPhone, iPad, Apple Watch, Mac, Apple TV, accesorios, entretenimiento y soporte técnico.</p>
+            <p class="footerP">Lorem ipsum dolor sit amet consectetur adipisic Lorem ipsum dolor sit amet consectetur adipisic dolor sit amet</p>
             <div class="footerSocial">
               <h2>Seguinos</h2>
               <br />
@@ -156,16 +151,16 @@
             <h2>Categorias</h2>
             <ul>
               <li>
-                <a href="#">Apple Iphone 15</a>
+                <a href="#">Iphone 14</a>
               </li>
               <li>
-                <a href="#">Apple Iphone 15 pro</a>
+                <a href="#">Iphone 13</a>
               </li>
               <li>
-                <a href="#">Apple Wacth Series 7</a>
+                <a href="#">Iphone 12</a>
               </li>
               <li>
-                <a href="#">Apple Wacth Series 8</a>
+                <a href="#">Iphone 11</a>
               </li>
             </ul>
           </div>
@@ -189,7 +184,7 @@
         <span class="santi">Santiago Rodriguez</span>. All Rights Reserved.
       </p>
     </footer>
-    <script src="./js/terceraEntrega.js"></script>
+    <script src="../js/carrito.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

@@ -10,22 +10,14 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-black border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html"><img class="bi-apple" src="" alt="" /></a>
+          <a class="navbar-brand" href="../index.html"><img class="bi-apple" src="" alt="" /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -40,13 +32,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="./index.html">Inicio</a>
+                <a class="nav-link" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Iphone </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="./pages/productosBusqueda.html">Iphone 15P</a>
+                    <a class="dropdown-item" href="./pages/silla.html">Iphone 15P</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="./pages/silla.html">Iphone 13</a>
@@ -63,7 +55,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Wacth </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="./pages/apple.html">Series 8</a>
+                    <a class="dropdown-item" href="./pages/silla.html">Series 8</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="./pages/silla.html">Series 6</a>
@@ -77,33 +69,50 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/micuenta.html">Mi Cuenta</a>
+                <a class="nav-link" href="./micuenta.html">Mi Cuenta</a>
               </li>
             </ul>
           </div>
-          <a class="navbar-brand" href="./pages/carrito.html"><img class="bi-bag" src="" alt="" /></a>
+          <a class="navbar-brand" href="./carrito.html"><img class="bi-bag" src="" alt="" /></a>
         </div>
       </nav>
     </header>
-
-    <main>
-      <div class="container_busqueda">
-        <img class="foto-index" src="./assets/Mac.png" alt="" />
-        <div class="container-input">
-          <input class="barra" type="text" placeholder="Buscar" />
-          <ul class="resultadoBusqueda"></ul>
-          <div class="btn">
-            <i class="fa fa-search"></i>
+    <main class="main">
+      <div class="contenedor__todo">
+        <div class="caja__trasera">
+          <div class="caja__trasera-login">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesión para entrar en la página</p>
+            <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+          </div>
+          <div class="caja__trasera-register">
+            <h3 class="cuenta">¿Aún no tienes una cuenta?</h3>
+            <p>Regístrate para que puedas iniciar sesión</p>
+            <button id="btn__registrarse">Regístrarse</button>
           </div>
         </div>
-      </div>
 
-      <div class="div-tit-p mt-4">
-        <h1>Productos</h1>
-      </div>
-      <div id="lista"></div>
+        <!--Formulario de Login y registro-->
+        <div class="contenedor__login-register">
+          <!--Login-->
+          <form action="" class="formulario__login">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" placeholder="Correo Electronico" />
+            <input type="password" placeholder="Contraseña" />
+            <button>Entrar</button>
+          </form>
 
-      <section id="vista-previa"></section>
+          <!--Register-->
+          <form action="" class="formulario__register">
+            <h2>Regístrarse</h2>
+            <input type="text" placeholder="Nombre completo" />
+            <input type="text" placeholder="Correo Electronico" />
+            <input type="text" placeholder="Usuario" />
+            <input type="password" placeholder="Contraseña" />
+            <button>Regístrarse</button>
+          </form>
+        </div>
+      </div>
 
       <div class="contacto-2">
         <input type="checkbox" id="button" />
@@ -112,20 +121,19 @@
           <a href="https://es-la.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
           <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
           <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/santiago-rodr%C3%ADguez-445106296/" target="_blank"><i class="bi bi-linkedin"></i></a>
         </div>
         <div class="button">
           <label for="button" class="icon-mas"><i class="bi bi-plus-lg"></i></label>
         </div>
       </div>
     </main>
-
     <footer>
       <div class="containerFooter">
         <div class="footerHorizontal">
           <div class="footerUrl">
             <h2>Apple Store</h2>
-            <p class="footerP">Descubre el innovador mundo de Apple: iPhone, iPad, Apple Watch, Mac, Apple TV, accesorios, entretenimiento y soporte técnico.</p>
+            <p class="footerP">Lorem ipsum dolor sit amet consectetur adipisic Lorem ipsum dolor sit amet consectetur adipisic dolor sit amet</p>
             <div class="footerSocial">
               <h2>Seguinos</h2>
               <br />
@@ -156,16 +164,16 @@
             <h2>Categorias</h2>
             <ul>
               <li>
-                <a href="#">Apple Iphone 15</a>
+                <a href="#">Iphone 14</a>
               </li>
               <li>
-                <a href="#">Apple Iphone 15 pro</a>
+                <a href="#">Iphone 13</a>
               </li>
               <li>
-                <a href="#">Apple Wacth Series 7</a>
+                <a href="#">Iphone 12</a>
               </li>
               <li>
-                <a href="#">Apple Wacth Series 8</a>
+                <a href="#">Iphone 11</a>
               </li>
             </ul>
           </div>
@@ -189,7 +197,7 @@
         <span class="santi">Santiago Rodriguez</span>. All Rights Reserved.
       </p>
     </footer>
-    <script src="./js/terceraEntrega.js"></script>
+    <script src="../js/miCuenta.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

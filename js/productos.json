@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "categoria": 1,
+    "nombre": "Apple Iphone 15",
+    "descripcion": "El iPhone 15 viene con la Dynamic Island, cámara gran angular de 48 MP, entrada USB-C y un resistente vidrio con infusión de color en un diseño de aluminio.",
+    "precio": 800,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_779617-MLA71782867320_092023-F.webp",
+    "descuento": false
+  },
+  {
+    "id": 2,
+    "categoria": 1,
+    "nombre": "Apple Iphone 14",
+    "descripcion": "El iPhone 14 viene con el sistema de dos cámaras más impresionante en un iPhone 14, para que tomes fotos espectaculares con mucha o poca luz. Y te da más tranquilidad gracias a una funcionalidad de seguridad que salva vidas.",
+    "precio": 650,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_918579-MLM51559384401_092022-F.webp",
+    "descuento": false
+  },
+  {
+    "id": 3,
+    "categoria": 1,
+    "nombre": "Apple Iphone 13",
+    "descripcion": "iPhone 13. El sistema de dos cámaras más avanzado en un iPhone. El superrápido chip A15 Bionic. Un gran salto en duración de batería. Un diseño resistente. Y una pantalla Super Retina XDR más brillante.",
+    "precio": 550,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_736168-MLA47781742030_102021-F.webp",
+    "descuento": false
+  },
+  {
+    "id": 4,
+    "categoria": 1,
+    "nombre": "Apple iPhone 15 Pro",
+    "descripcion": "iPhone 15 Pro. Forjado en titanio y equipado con el revolucionario chip A17 Pro, un Botón de Acción personalizable y el sistema de cámaras Pro más versátil.",
+    "precio": 1000,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_918178-MLA71783088444_092023-F.webp",
+    "descuento": true,
+    "porcentaje": "20"
+  },
+  {
+    "id": 5,
+    "categoria": 2,
+    "nombre": "Apple Watch Series 8",
+    "descripcion": "El Apple Watch Series 8 Procesador S8 Pantalla Retina 45mm es el complemento perfecto para tu estilo de vida activo y conectado. Con su diseño elegante y moderno, este reloj inteligente de Apple te ofrece una experiencia única.",
+    "precio": 600,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_702239-MLU71526033387_092023-F.webp",
+    "descuento": true,
+    "porcentaje": "20"
+  },
+  {
+    "id": 6,
+    "categoria": 2,
+    "nombre": "Apple Watch Series 6",
+    "descripcion": "Hablar de Apple es hablar de sofisticación y tecnología de punta. Los Apple Watch combinan diseño de otro nivel con funcionalidades que hacen la rutina de cualquier persona mucho más fácil. Registra tus entrenamientos, controla tu salud y te mantiene siempre conectado.",
+    "precio": 400,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_739213-MLA46332952432_062021-F.webp",
+    "descuento": false
+  },
+  {
+    "id": 7,
+    "categoria": 2,
+    "nombre": "Apple Watch Series 7",
+    "descripcion": "El Apple Watch Series 7 tiene la pantalla Retina siempre activa más grande y avanzada hasta ahora. Todo se ve increíble y es más fácil de usar. También es el más resistente a golpes gracias a su nuevo cristal frontal. Sus funcionalidades avanzadas te permiten medir tu nivel de oxígeno en la sangre.",
+    "precio": 450,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_876866-MLA48087748877_112021-F.webp",
+    "descuento": false
+  },
+  {
+    "id": 8,
+    "categoria": 2,
+    "nombre": "Apple Watch Se",
+    "descripcion": "Hablar de Apple es hablar de sofisticación y tecnología de punta. Los Apple Watch combinan diseño de otro nivel con funcionalidades que hacen la rutina de cualquier persona mucho más fácil. Registra tus entrenamientos, controla tu salud y te mantiene siempre conectado.",
+    "precio": 400,
+    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_809398-MLU71485560505_092023-F.webp",
+    "descuento": false
+  }
+]
