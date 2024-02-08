@@ -65,14 +65,5 @@ node_modules/
 # dotenv environment variables file
 .env
 
-firebase.json
-
-firebase.indexes.json
-
-.firebaserc
-
-firestore.rules
-
-.firebase/
 
 

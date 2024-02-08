@@ -15,7 +15,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 4rem;
 }
 header .logo {
   width: 2.5rem;
@@ -749,11 +748,13 @@ footer {
 .santi {
   color: #4caf50;
 }
-@media screen and (max-width: 850px) {
-  main {
-    margin-top: 50px;
+@media screen and (max-width: 991px) {
+  .container_busqueda {
+    top: 0;
+    margin-bottom: 5.5rem;
   }
-
+}
+@media screen and (max-width: 850px) {
   .caja__trasera {
     max-width: 350px;
     height: 300px;
@@ -782,6 +783,9 @@ footer {
   }
 }
 @media (max-width: 769px) {
+  .container_busqueda {
+    top: 0;
+  }
   .linkFooter {
     text-align: center;
   }
