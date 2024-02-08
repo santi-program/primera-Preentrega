@@ -65,6 +65,9 @@ body .fondo {
   width: 100%;
 }
 /* barra de busqueda */
+.container_busqueda {
+  position: relative;
+}
 .container-input {
   position: absolute;
   left: 50%;
@@ -285,6 +288,8 @@ body .fondo {
 
 .card-body {
   text-align: center;
+  background-color: rgb(177, 176, 176);
+  color: black;
 }
 .p-descuento {
   padding: 2px;
@@ -748,10 +753,44 @@ footer {
 .santi {
   color: #4caf50;
 }
+@media screen and (max-width: 1040px) {
+  .container-descrip {
+    top: 2rem;
+  }
+}
 @media screen and (max-width: 991px) {
   .container_busqueda {
     top: 0;
     margin-bottom: 5.5rem;
+  }
+  .footerUrl input {
+    font-size: 0.7125rem;
+  }
+  #vista-previa {
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "h1 h1"
+      "img img"
+      "h3 h3"
+      "pe pe"
+      "pr bot";
+    place-items: center;
+  }
+  #vista-previa h1 {
+    grid-area: h1;
+    text-align: center;
+    border-bottom: 5px solid red;
+  }
+
+  #vista-previa h3 {
+    grid-area: h3;
+    font-weight: bold;
+    margin-top: 1.25rem;
+  }
+  #vista-previa p {
+    grid-area: pe;
+    font-size: 1.25rem;
   }
 }
 @media screen and (max-width: 850px) {
@@ -783,6 +822,23 @@ footer {
   }
 }
 @media (max-width: 769px) {
+  .container-descrip {
+    top: 2rem;
+    font-size: 0.625rem;
+    padding: 0;
+  }
+  .container-descrip .titulo-banner {
+    padding-bottom: 1rem;
+  }
+  .container-descrip .parrafo-banner {
+    font-size: 0.7375rem;
+  }
+  .container-descrip .boton-banner {
+    margin-top: 1rem;
+  }
+  .banner {
+    height: 25rem;
+  }
   .container_busqueda {
     top: 0;
   }
@@ -809,6 +865,37 @@ footer {
   .footerButton {
     margin-top: 0.625rem;
   }
+  .container-input .barra {
+    height: 3rem;
+    width: 20rem;
+  }
+  .container-input .btn {
+    width: 3.725rem;
+    height: 3.725rem;
+    line-height: 2rem;
+  }
+  .btn i {
+    font-size: 1.25rem;
+    line-height: 3rem;
+  }
+  .busqueda-titulo {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 650px) {
+  .container-descrip {
+    top: 3rem;
+  }
+  .container-descrip .titulo-banner {
+    font-size: 2rem;
+  }
+  .container-descrip .boton-banner {
+    margin-top: 1rem;
+    font-size: 0.625rem;
+  }
+  .banner {
+    height: 25rem;
+  }
 }
 @media (max-width: 600px) {
   .form-login {
@@ -819,5 +906,106 @@ footer {
   }
   .login .boton {
     width: 60%;
+  }
+  .container-input .barra {
+    height: 2.5rem;
+    width: 15rem;
+  }
+  .container-input .btn {
+    width: 3.525rem;
+    height: 3.525rem;
+  }
+  .busqueda-titulo {
+    font-size: 0.8rem;
+  }
+  .foto-index {
+    height: 230px;
+  }
+  .container-card .card .card-img-top {
+    height: 19rem;
+  }
+}
+@media (max-width: 540px) {
+  .container-descrip {
+    top: 0.7rem;
+    margin-left: 1.5rem;
+  }
+  .container-descrip .titulo-banner {
+    font-size: 1.2rem;
+    padding-bottom: 8px;
+  }
+  .container-descrip .parrafo-banner {
+    margin-bottom: 0.025rem;
+    font-size: 0.65rem;
+  }
+  .container-descrip .boton-banner {
+    font-size: 0.425rem;
+  }
+  .banner {
+    height: 17rem;
+  }
+  .foto-index {
+    height: 200px;
+  }
+}
+@media (max-width: 450px) {
+  .container-input .barra {
+    height: 1.9rem;
+    width: 12rem;
+  }
+  .container-input .btn {
+    width: 2.95rem;
+    height: 2.95rem;
+  }
+  .btn i {
+    font-size: 1rem;
+    line-height: 2.3rem;
+  }
+  .resultadoBusqueda {
+    padding-right: 0.625rem;
+  }
+  .busqueda-titulo {
+    font-size: 0.9rem;
+  }
+  .productosBusqueda .busqueda-item .busqueda-precio {
+    font-size: 1rem;
+  }
+  .foto-index {
+    height: 150px;
+  }
+  .container-descrip {
+    top: 0.7rem;
+    margin-left: 1.2rem;
+  }
+  .container-descrip .titulo-banner {
+    font-size: 1.2rem;
+    padding-bottom: 6px;
+  }
+  .container-descrip .parrafo-banner {
+    font-size: 0.55rem;
+  }
+  .banner {
+    height: 15rem;
+  }
+}
+@media (max-width: 330px) {
+  .container-input .barra {
+    height: 1.5rem;
+    width: 10rem;
+  }
+  .container-input .btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .btn i {
+    font-size: 0.9rem;
+    line-height: 2rem;
+  }
+  .foto-index {
+    height: 130px;
+  }
+  .container-descrip .titulo-banner {
+    font-size: 1rem;
+    padding-bottom: 6px;
   }
 }

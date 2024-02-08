@@ -48,26 +48,31 @@ const pedirProductos = async () => {
        // Verifica si el clic proviene del botón-carrito
       if (!event.target.classList.contains("boton-carrito")) {
         abrir(producto);
-      eventoAbrir(producto)
       }
     });
 
-    // Agrego el evento al botón de cada producto
-    const botonCarrito = div.querySelector(".boton-carrito");
-    botonCarrito.addEventListener("click", (event) => {
-      // Detiene la propagación del evento para que no llegue al contenedor
-      event.stopPropagation();
-
-      const productoSeleccionado = JSON.parse(
+    // Agregar event listener al botón de cada producto
+const botonCarrito = div.querySelector(".boton-carrito");
+botonCarrito.addEventListener("click", (event) => {
+    // Detiene la propagación del evento para que no llegue al contenedor
+    event.stopPropagation();
+    const productoSeleccionado = JSON.parse(
         //obtengo el producto asociado al boton
         botonCarrito.getAttribute("data-producto")
-      );
-      //agrego el producto al local storage
-      const productosGuardados =
-        JSON.parse(localStorage.getItem("data")) || [];
-      productosGuardados.push(productoSeleccionado);
-      localStorage.setItem("data", JSON.stringify(productosGuardados));
-    });
+    );
+    // Verificar si el producto ya está en el carrito
+    const productosGuardados = JSON.parse(localStorage.getItem("data")) || [];
+    const productoExistente = productosGuardados.find(producto => producto.id === productoSeleccionado.id);
+    if (productoExistente) {
+        // Si el producto ya está en el carrito, actualizar la cantidad
+        productoExistente.cantidad++;
+    } else {
+        // Si el producto no está en el carrito, agregarlo
+        productosGuardados.push({ ...productoSeleccionado, cantidad: 1 });
+    }
+    // Actualizar localStorage
+    localStorage.setItem("data", JSON.stringify(productosGuardados));
+});
 
     lista.append(div);
   });
@@ -102,7 +107,7 @@ BusquedaInput.addEventListener('input', () => {
       // creación de productos de muestra
       divResultado.innerHTML = `
         <div class="productosBusqueda">
-          <img src=${producto.img} width="60px" alt="Producto">
+          <img class="img-inputs" src=${producto.img} width="60px" alt="Producto">
           <div class="busqueda-item">
             <h4 class="busqueda-titulo">${producto.nombre}</h4>
             <p class="busqueda-precio">$${producto.precio}</p>
@@ -113,7 +118,6 @@ BusquedaInput.addEventListener('input', () => {
       divResultado.addEventListener('click', () => {
         // Ejecuta la función ampliar al hacer clic y pasa el producto como parámetro
         abrir(producto);
-        eventoAbrir(producto);
       });
 
       resultadosContainer.appendChild(divResultado);
@@ -121,15 +125,13 @@ BusquedaInput.addEventListener('input', () => {
   }
 });
 
-// ...
-
 
 // Producto Ampliado
 function abrir(producto) {
-  // Establece la posición de desplazamiento al principio de la página, sin esto al oprimir los productos del home, me deja al final de la pagina donde se encuentra la descrip
+  // Establece la posición de desplazamiento al principio de la página
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // O 'auto' para un desplazamiento instantáneo
+    behavior: 'smooth'
   });
   productoAmpleado.innerHTML = "";
   lista.style.display = "none";
@@ -144,14 +146,18 @@ function abrir(producto) {
       <p class="precio"><span>Precio: <span>$ ${producto.precio}</p>
       <button class="boton-carrito bi bi-cart" id="botonCarritoAmpliado" data-producto='${JSON.stringify(producto)}'></button>
   `;
-}
-function eventoAbrir(producto){
-  // Agrego el evento click al botón, lo mismo que hago al final de la funcion pedirProductos
+
+  // Agregar evento de clic al botón de "Agregar al carrito" una vez que se abre el producto
   const botonCarritoAmpliado = document.getElementById('botonCarritoAmpliado');
   botonCarritoAmpliado.addEventListener('click', () => {
     const productoSeleccionado = JSON.parse(botonCarritoAmpliado.getAttribute('data-producto'));
     const productosGuardados = JSON.parse(localStorage.getItem('data')) || [];
-    productosGuardados.push(productoSeleccionado);
+    const productoExistente = productosGuardados.find(producto => producto.id === productoSeleccionado.id);
+    if (productoExistente) {
+      productoExistente.cantidad++;
+    } else {
+      productosGuardados.push({ ...productoSeleccionado, cantidad: 1 });
+    }
     localStorage.setItem('data', JSON.stringify(productosGuardados));
   });
 }
