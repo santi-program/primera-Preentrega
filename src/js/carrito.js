@@ -1,4 +1,4 @@
- //carrito de compras
+//carrito de compras
 
 // TRAIGO EL LOCAL STORAGE
 const array = JSON.parse(localStorage.getItem("data")) || [];

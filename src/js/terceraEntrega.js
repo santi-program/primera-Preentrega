@@ -1,3 +1,4 @@
+
 //TRAIGO LOS PRODUCTOS QUE NECESITO
 //el contenedor de los productos del index
 const lista = document.querySelector("#lista");
