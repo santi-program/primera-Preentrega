@@ -228,7 +228,7 @@ body .fondo {
 }
 
 .redes a {
-  margin-bottom: -15px;
+  margin-bottom: -19px;
   opacity: 0;
   visibility: hidden;
 }
@@ -247,7 +247,9 @@ body .fondo {
   cursor: pointer;
   font-size: 23px;
 }
-
+.redes {
+  margin-left: 0.66rem;
+}
 #button:checked ~ .button .icon-mas {
   transform: rotate(137deg);
   font-size: 25px;
@@ -1034,6 +1036,10 @@ footer {
     width: 5rem;
     height: 3rem;
   }
+  .contenedor__login-register form button {
+    padding: 0.625rem 0.6625rem;
+    font-size: 0.645rem;
+  }
 }
 @media (max-width: 403px) {
   #vista-previa img {
@@ -1052,6 +1058,10 @@ footer {
   #vista-previa img {
     width: 14rem;
     height: 18rem;
+  }
+  .contenedor__login-register form button {
+    padding: 0.625rem 0.4625rem;
+    font-size: 0.545rem;
   }
 }
 @media (max-width: 330px) {
