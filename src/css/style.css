@@ -41,7 +41,7 @@ header .navbar li a:hover {
 }
 .bi-apple {
   margin-top: 0.2rem;
-  margin-left: 3.125rem;
+  margin-left: 1rem;
 }
 .bi-apple:hover {
   color: red;
@@ -52,6 +52,9 @@ header .navbar li a:hover {
 }
 .bi-bag:hover {
   color: red;
+}
+.bi {
+  margin: 0.625rem;
 }
 body {
   font-family: sans-serif;
@@ -584,10 +587,10 @@ body .fondo {
 }
 
 .contenedor__login-register form button {
-  padding: 10px 29px;
+  padding: 10px 14px;
   margin-top: 30px;
   border: none;
-  font-size: 14px;
+  font-size: 13px;
   background: black;
   font-weight: 600;
   cursor: pointer;
@@ -705,7 +708,7 @@ footer {
   color: red;
   padding-left: 0.375rem;
 }
-.footerSocial img {
+.footerSocial .bi {
   display: inline-block;
   min-height: 2.5rem;
   width: 2.5rem;
@@ -717,7 +720,7 @@ footer {
   border-radius: 50%;
   transition: all 0.5s ease;
 }
-.footerSocial img:hover {
+.footerSocial .bi:hover {
   background-color: red;
 }
 .footerUrl input {
@@ -922,7 +925,7 @@ footer {
     height: 230px;
   }
   .container-card .card .card-img-top {
-    height: 19rem;
+    height: 22rem;
   }
 }
 @media (max-width: 540px) {
@@ -946,6 +949,27 @@ footer {
   }
   .foto-index {
     height: 200px;
+  }
+  #vista-previa h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 2.2rem;
+  }
+
+  #vista-previa h3 {
+    font-weight: bold;
+    margin-top: 1.25rem;
+  }
+  #vista-previa p {
+    font-size: 1rem;
+    margin: 20px;
+  }
+  #vista-previa img {
+    width: 15rem;
+    height: 20rem;
+  }
+  .btn-eliminar {
+    margin-top: 5rem;
   }
 }
 @media (max-width: 450px) {
@@ -987,6 +1011,48 @@ footer {
   .banner {
     height: 15rem;
   }
+  #vista-previa h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+
+  #vista-previa h3 {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-right: 2.7rem;
+  }
+  #vista-previa p {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+  #vista-previa img {
+    width: 17.9rem;
+    height: 24rem;
+  }
+  #vista-previa .boton-carrito {
+    width: 5rem;
+    height: 3rem;
+  }
+}
+@media (max-width: 403px) {
+  #vista-previa img {
+    width: 16rem;
+    height: 20rem;
+  }
+  .carrito-item-detalles .carrito-item-titulo {
+    font-size: 1rem;
+  }
+  .carrito .carrito-item .carrito-item-precio {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 363px) {
+  #vista-previa img {
+    width: 14rem;
+    height: 18rem;
+  }
 }
 @media (max-width: 330px) {
   .container-input .barra {
@@ -1007,5 +1073,14 @@ footer {
   .container-descrip .titulo-banner {
     font-size: 1rem;
     padding-bottom: 6px;
+  }
+  #vista-previa img {
+    width: 13.5rem;
+    height: 18rem;
+  }
+  #vista-previa .boton-carrito {
+    width: 4rem;
+    height: 2.5rem;
+    margin-right: 1.9rem;
   }
 }

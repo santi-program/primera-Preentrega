@@ -1,5 +1,4 @@
 //carrito de compras
-
 const array = JSON.parse(localStorage.getItem("data")) || [];
 
 //elementos del html
@@ -51,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
           nuevoProductoDiv.remove();
           // Recalcular total del carrito
           actualizarTotal();
+          showMessage("Eliminaste un Producto","error");
       });
 
       // Agregar event listener para restar cantidad
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (productoSeleccionado.cantidad > 1) {
               productoSeleccionado.cantidad--;
               actualizarCantidad();
+              showMessage("Restaste un Producto", "error");
           }
       });
 
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sumarCantidadBtn.addEventListener('click', () => {
           productoSeleccionado.cantidad++;
           actualizarCantidad();
+          showMessage("Sumaste un Producto");
       });
 
       // Función para actualizar la cantidad en el HTML y en el localStorage
@@ -118,4 +120,32 @@ totalPagar.addEventListener(`click`, () => {
 
     const carrito = document.querySelector('.carrito-precio-total');
     carrito.textContent = '$0.00';
+    alert();
 })
+function alert() {
+    Swal.fire({
+        title: "Compra Realizada!!",
+        text: "Te enviaremos un mail con los datos de tu envio!",
+        icon: "success"
+      });
+} 
+
+function showMessage(message, type = "success") {
+    Toastify({
+        text: message,
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: type === "success" ? "green" : "red",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}
+
+
+

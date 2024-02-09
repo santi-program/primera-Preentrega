@@ -72,6 +72,7 @@ botonCarrito.addEventListener("click", (event) => {
     }
     // Actualizar localStorage
     localStorage.setItem("data", JSON.stringify(productosGuardados));
+    showMessage("Producto Añadido al Carrito");
 });
 
     lista.append(div);
@@ -159,6 +160,31 @@ function abrir(producto) {
       productosGuardados.push({ ...productoSeleccionado, cantidad: 1 });
     }
     localStorage.setItem('data', JSON.stringify(productosGuardados));
+    alert();
   });
+}
+
+function alert() {
+  Swal.fire({
+      title: "Producto Añadido al Carrito!!",
+      text: "Recuerda Concretar tu Compra!",
+      icon: "success"
+    });
+} 
+function showMessage(message, type = "success") {
+  Toastify({
+      text: message,
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: type === "success" ? "green" : "red",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
 }
 
