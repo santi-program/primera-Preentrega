@@ -16,7 +16,7 @@ facebookButton.addEventListener(`click`, async () => {
 
     } catch (error) {
         if (error.code === `auth/account-exists-with-different-credential`) {
-            showMessage("ya iniciaste secion con la misma credencial", "error")
+            showMessage("ya iniciaste sesion con la misma credencial", "error")
         }else{
             showMessage("error")
         }

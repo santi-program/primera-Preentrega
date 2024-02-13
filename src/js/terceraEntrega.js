@@ -8,6 +8,7 @@ const resBusqueda = document.querySelector(`.resultadoBusqueda`)
 const inputIndex = document.querySelector(`.container_busqueda`)
 const productosIndex = document.querySelector(`.div-tit-p`)
 const productoAmpleado = document.querySelector(`#vista-previa`)
+const banner = document.querySelector(`.container-banner`)
 
 let data;
 const pedirProductos = async () => {
@@ -137,6 +138,7 @@ function abrir(producto) {
   productoAmpleado.innerHTML = "";
   lista.style.display = "none";
   inputIndex.style.display = 'none';
+  banner.style.display = "none";
   productosIndex.style.display = 'none';
   productoAmpleado.style.display = "grid";
   productoAmpleado.innerHTML = `
@@ -188,3 +190,19 @@ function showMessage(message, type = "success") {
     }).showToast();
 }
 
+
+        // Función para desplazamiento de los enlaces del nav
+        function scrollToElement(element) {
+            window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: element.offsetTop
+            });
+        }
+
+        // Manejador de eventos para hacer que el enlace despliegue suavemente hacia el elemento con el ID "destino"
+        document.querySelector('[href="#destino"]').addEventListener('click', function (e) {
+            e.preventDefault(); // Evita el comportamiento predeterminado del enlace (navegación)
+            const destino = document.getElementById('destino');
+            scrollToElement(destino);
+        });

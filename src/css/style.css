@@ -611,6 +611,32 @@ body .fondo {
 .formulario__register {
   display: none;
 }
+/* PRODUCTO APARECIDO EN MI CUENTA */
+.inicio-bienvenida {
+  text-align: center;
+  padding: 10% 20px;
+}
+.inicio-bienvenida .boton-carrito {
+  list-style: none;
+  text-decoration: none;
+}
+.display {
+  display: none;
+}
+
+/* TERMINOS Y CONDICIONES */
+
+.terminos-condiciones {
+  text-align: center;
+  margin: 5%;
+  font-weight: bold;
+}
+.terminos-condiciones .cambio {
+  text-align: left;
+}
+.terminos-condiciones h2 {
+  color: red;
+}
 
 /* FOOTER */
 .containerFooter {
@@ -858,7 +884,6 @@ footer {
   .footerUrl {
     width: 100%;
     margin-bottom: 1rem;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

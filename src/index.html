@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="keywords" content="apple iphone watch mac" />
+    <meta name="description" content="Descubre el innovador mundo de Apple: iPhone, accesorios, entretenimiento y soporte técnico." />
+    <meta name="author" content="Santiago Rodriguez" />
+    <meta name="copyright" content="NicSan" />
+    <meta name="lenguage" content="Español" />
+    <meta property="og:title" content="Iphone Store" />
+    <meta property="og:site_name" content="Iphone Store" />
+    <meta property="og:description" content="Iphone Store - Nosotros te podemos ayudar a encontrar la mejor opcion para vos." />
+    <meta property="og:type" content="https://applestorejrx.web.app/" />
+    <meta property="og:image" content="./assets/navbar/logo.png" />
+    <title>Apple Store || Inicio</title>
+    <link rel="shortcut icon" href="./assets/navbar/logo.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,6 +28,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
@@ -44,50 +56,20 @@
                 <a class="nav-link" href="./index.html">Inicio</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Iphone </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="./pages/productosBusqueda.html">Iphone 15P</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/silla.html">Iphone 13</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/jbl.html">Iphone 14</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/apple.html">Iphone 15</a>
-                  </li>
-                </ul>
+                <a class="nav-link" href="#destino" role="button" aria-expanded="false"> Iphone </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Wacth </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="./pages/apple.html">Series 8</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/silla.html">Series 6</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/jbl.html">Series 7</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/apple.html">Se</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./pages/micuenta.html">Mi Cuenta</a>
+                <a class="nav-link" href="#destino" role="button" aria-expanded="false"> Wacth </a>
               </li>
             </ul>
           </div>
+          <a class="navbar-brand" href="./pages/micuenta.html"><i class="bi bi-bag"></i></a>
         </div>
       </nav>
     </header>
 
     <main>
-      <div class="container_busqueda">
+      <div class="container_busqueda" data-aos="zoom-in" data-aos-duration="900">
         <img class="foto-index" src="./assets/Mac.png" alt="" />
         <div class="container-input">
           <input class="barra" type="text" placeholder="Buscar" />
@@ -98,10 +80,10 @@
         </div>
       </div>
 
-      <div class="div-tit-p mt-4">
+      <div class="div-tit-p mt-4" id="destino">
         <h1>Productos</h1>
       </div>
-      <div id="lista"></div>
+      <div id="lista" data-aos="fade-up" data-aos-duration="1500"></div>
 
       <section id="vista-previa"></section>
 
@@ -119,7 +101,7 @@
         </div>
       </div>
 
-      <div class="container-banner">
+      <div class="container-banner" data-aos="fade-up" data-aos-duration="1500">
         <div class="container-descrip">
           <h2 class="titulo-banner">Apple Wacth Series 8</h2>
           <p class="parrafo-banner">
@@ -151,16 +133,16 @@
             <h2>Legales</h2>
             <ul>
               <li>
-                <a href="">Terminos & Condiciones</a>
+                <a href="./pages/terminos.html">Terminos & Condiciones</a>
               </li>
               <li>
-                <a href="">Politicas de Privacidad</a>
+                <a href="./pages/terminos.html">Politicas de Privacidad</a>
               </li>
               <li>
-                <a href="">Politicas de Cambio</a>
+                <a href="./pages/terminos.html">Politicas de Cambio</a>
               </li>
               <li>
-                <a href="">pregunta</a>
+                <a href="./pages/terminos.html">pregunta</a>
               </li>
             </ul>
           </div>
@@ -201,7 +183,7 @@
         <span class="santi">Santiago Rodriguez</span>. All Rights Reserved.
       </p>
     </footer>
-    <script src="./js/terceraEntrega.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -209,5 +191,10 @@
     ></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./js/terceraEntrega.js"></script>
   </body>
 </html>
