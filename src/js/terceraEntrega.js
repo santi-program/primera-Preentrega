@@ -190,6 +190,15 @@ function showMessage(message, type = "success") {
     }).showToast();
 }
 
+//boton del footer email
+const footerBotton = document.querySelector(`.footerButton`)
+footerBotton.addEventListener(`click`, () => {
+  Swal.fire({
+    title: "Enviamos un Mail al Correo!!",
+    text: "Con los DESCUENTOS DISPONIBLES!",
+    icon: "success"
+  });
+})
 
         // Función para desplazamiento de los enlaces del nav
         function scrollToElement(element) {
