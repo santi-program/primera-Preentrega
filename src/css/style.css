@@ -5,10 +5,11 @@
   text-decoration: none;
 }
 body {
-  background-image: url("../assets/fondos.jpg");
-  background-size: cover; /* Para cubrir todo el área del cuerpo */
-  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-  background-position: center; /* Centra la imagen de fondo */
+  background-color: rgb(136, 72, 72);
+  transition: 0.6s ease all;
+}
+body.dark {
+  background-color: #1b1a1a;
 }
 header {
   width: 100%;
@@ -18,6 +19,12 @@ header {
 }
 header .logo {
   width: 2.5rem;
+}
+.navbar {
+  background-color: rgb(145, 69, 69);
+}
+body.dark .navbar {
+  background-color: #1b1a1a;
 }
 nav ul {
   display: flex;
@@ -91,6 +98,10 @@ body .fondo {
   font-size: 20px;
   border: 1px solid #d50000;
 }
+body.dark .barra {
+  background-color: #1b1a1a;
+  color: white;
+}
 
 .btn {
   position: absolute;
@@ -136,6 +147,10 @@ body .fondo {
   padding: 8px 12px;
   border-radius: 5px;
   background-color: white;
+}
+body.dark .resultadoBusqueda li {
+  background-color: #443f3f;
+  color: white;
 }
 .productosBusqueda {
   display: flex;
@@ -198,6 +213,53 @@ body .fondo {
   width: 15rem;
 }
 
+/* BOTON DE MODO OSCURO */
+.switch {
+  background-color: #1b1a1a;
+  border-radius: 62.5rem;
+  border: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  z-index: 999;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 1.875rem;
+  height: 1.875rem;
+  position: absolute;
+  background-color: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 6.25rem;
+  transition: 0.3s ease all;
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0, 0.2);
+}
+
+.switch.active {
+  background-color: rgb(136, 72, 72);
+  color: black;
+}
+
+.switch.active::after {
+  right: 0;
+  left: unset;
+}
+
+.switch span {
+  width: 1.875rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  display: block;
+  background: none;
+  color: white;
+}
 /* BOTON DE CONTACTO */
 #button {
   display: none;
@@ -265,6 +327,7 @@ body .fondo {
   justify-content: center;
   align-items: center;
   margin-top: 10rem;
+  color: white;
 }
 
 #lista {
@@ -290,11 +353,23 @@ body .fondo {
   width: 100%;
   height: 23rem;
 }
-
+.card {
+  background-color: rgb(128, 100, 100);
+}
 .card-body {
   text-align: center;
-  background-color: rgb(177, 176, 176);
+  background-color: rgb(128, 100, 100);
   color: black;
+}
+body.dark .card {
+  background-color: #443f3f;
+}
+body.dark .card-body {
+  background-color: #443f3f;
+  color: white;
+}
+body.dark .container-card:hover {
+  box-shadow: 0 0 10px 3px white;
 }
 .p-descuento {
   padding: 2px;

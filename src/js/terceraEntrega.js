@@ -206,3 +206,11 @@ function showMessage(message, type = "success") {
             const destino = document.getElementById('destino');
             scrollToElement(destino);
         });
+
+const btnSwitch = document.querySelector(`#switch`);
+
+btnSwitch.addEventListener(`click`, () => {
+  document.body.classList.toggle(`dark`);
+  btnSwitch.classList.toggle(`active`);
+
+})
