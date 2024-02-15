@@ -1,101 +1,103 @@
 //carrito de compras
 const array = JSON.parse(localStorage.getItem("data")) || [];
 
-//elementos del html
+//almaceno el total del carrito
 const carrito = document.querySelector(`.carrito-precio-total`);
+//boton para vaciar carrito
+const totalPagar = document.querySelector(`.btn-pagar`)
+//dark mode
+const btnSwitch = document.querySelector(`#switch`);
 
 
+//evento para cargar productos al carrito desde el local y actualizarlo
 document.addEventListener('DOMContentLoaded', function() {
   // TRAIGO LOS PRODUCTOS QUE NECESITO
   const productosSeleccionadosDiv = document.querySelector(`#productos-seleccionados`);
-
   // Limpiar el carrito antes de agregar los productos
   productosSeleccionadosDiv.innerHTML = '';
-
   // Itero sobre cada producto del local
   array.forEach((productoSeleccionado, index) => {
       // Inicializar la cantidad si no existe
-      if (!productoSeleccionado.hasOwnProperty('cantidad')) {
-          productoSeleccionado.cantidad = 1;
-      }
-
+    if (!productoSeleccionado.hasOwnProperty('cantidad')) {
+        productoSeleccionado.cantidad = 1;
+    }
       // Mostrar el producto seleccionado en el carrito
-      const nuevoProductoDiv = document.createElement('div');
-      nuevoProductoDiv.classList.add('carrito-item');
-      nuevoProductoDiv.innerHTML = `
-          <img src=${productoSeleccionado.img} width="80px" alt="Producto">
-          <div class="carrito-item-detalles">
-              <h5 class="carrito-item-titulo">${productoSeleccionado.nombre}</h5>
-              <div class="selector-cantidad">
-                  <i class="fa-solid fa-minus restar-cantidad"></i>
-                  <input type="text" value="${productoSeleccionado.cantidad}" class="carrito-item-cantidad" disabled>
-                  <i class="fa-solid fa-plus sumar-cantidad"></i>
-              </div>
-              <h2 class="carrito-item-precio">Precio:<span>$</span>${productoSeleccionado.precio}</h2>
-          </div>
-          <button class="btn-eliminar">
-              <i class="fa-solid fa-trash"></i>
-          </button>`;
+    const nuevoProductoDiv = document.createElement('div');
+    nuevoProductoDiv.classList.add('carrito-item');
+    nuevoProductoDiv.innerHTML = `
+        <img src=${productoSeleccionado.img} width="80px" alt="Producto">
+        <div class="carrito-item-detalles">
+            <h5 class="carrito-item-titulo">${productoSeleccionado.nombre}</h5>
+            <div class="selector-cantidad">
+                <i class="fa-solid fa-minus restar-cantidad"></i>
+                <input type="text" value="${productoSeleccionado.cantidad}" class="carrito-item-cantidad" disabled>
+                <i class="fa-solid fa-plus sumar-cantidad"></i>
+            </div>
+            <h2 class="carrito-item-precio">Precio:<span>$</span>${productoSeleccionado.precio}</h2>
+        </div>
+        <button class="btn-eliminar">
+            <i class="fa-solid fa-trash"></i>
+        </button>`;
 
-      productosSeleccionadosDiv.appendChild(nuevoProductoDiv);
+    productosSeleccionadosDiv.appendChild(nuevoProductoDiv);
 
       // Agregar event listener al botón eliminar
-      const btnEliminar = nuevoProductoDiv.querySelector('.btn-eliminar');
-      btnEliminar.addEventListener('click', () => {
+    const btnEliminar = nuevoProductoDiv.querySelector('.btn-eliminar');
+    btnEliminar.addEventListener('click', () => {
           // Eliminar elemento del array
-          array.splice(index, 1);
+        array.splice(index, 1);
           // Actualizar localStorage
-          localStorage.setItem('data', JSON.stringify(array));
+        localStorage.setItem('data', JSON.stringify(array));
           // Eliminar elemento del DOM
-          nuevoProductoDiv.remove();
+        nuevoProductoDiv.remove();
           // Recalcular total del carrito
-          actualizarTotal();
-          showMessage("Eliminaste un Producto","error");
-      });
+        updateTotal();
+        showMessage("Eliminaste un Producto","error");
+    });
 
       // Agregar event listener para restar cantidad
-      const restarCantidadBtn = nuevoProductoDiv.querySelector('.restar-cantidad');
-      restarCantidadBtn.addEventListener('click', () => {
-          if (productoSeleccionado.cantidad > 1) {
-              productoSeleccionado.cantidad--;
-              actualizarCantidad();
-              showMessage("Restaste un Producto", "error");
-          }
-      });
+    const restarCantidadBtn = nuevoProductoDiv.querySelector('.restar-cantidad');
+    restarCantidadBtn.addEventListener('click', () => {
+        if (productoSeleccionado.cantidad > 1) {
+            productoSeleccionado.cantidad--;
+            updateQuantity();
+            showMessage("Restaste un Producto", "error");
+        }
+    });
 
       // Agregar event listener para sumar cantidad
-      const sumarCantidadBtn = nuevoProductoDiv.querySelector('.sumar-cantidad');
-      sumarCantidadBtn.addEventListener('click', () => {
-          productoSeleccionado.cantidad++;
-          actualizarCantidad();
-          showMessage("Sumaste un Producto");
-      });
+    const sumarCantidadBtn = nuevoProductoDiv.querySelector('.sumar-cantidad');
+    sumarCantidadBtn.addEventListener('click', () => {
+        productoSeleccionado.cantidad++;
+        updateQuantity();
+        showMessage("Sumaste un Producto");
+    });
 
       // Función para actualizar la cantidad en el HTML y en el localStorage
-      function actualizarCantidad() {
-          const cantidadInput = nuevoProductoDiv.querySelector('.carrito-item-cantidad');
-          cantidadInput.value = productoSeleccionado.cantidad;
+    function updateQuantity() {
+        const cantidadInput = nuevoProductoDiv.querySelector('.carrito-item-cantidad');
+        cantidadInput.value = productoSeleccionado.cantidad;
           // Actualizar localStorage
-          localStorage.setItem('data', JSON.stringify(array));
+        localStorage.setItem('data', JSON.stringify(array));
           // Recalcular total del carrito
-          actualizarTotal();
-      }
-  });
+        updateTotal();
+    }
+});
 
   // Función para actualizar el total del carrito
-  function actualizarTotal() {
-      const resultado = array.reduce((acumulado, producto) => {
-          return acumulado + producto.precio * producto.cantidad;
-      }, 0);
-      carrito.textContent = `$${resultado.toFixed(2)}`;
-  }
+function updateTotal() {
+    const resultado = array.reduce((acumulado, producto) => {
+        return acumulado + producto.precio * producto.cantidad;
+    }, 0);
+    carrito.textContent = `$${resultado.toFixed(2)}`;
+}
 
   // Calcular total del carrito al cargar la página
-  actualizarTotal();
+updateTotal();
 });
 
 // Función para agregar un producto al carrito
-function agregarProductoAlCarrito(productoNuevo) {
+function addProductToCart(productoNuevo) {
   // Buscar si ya existe el producto en el carrito
   const productoExistente = array.find(producto => producto.id === productoNuevo.id);
   if (productoExistente) {
@@ -110,7 +112,6 @@ function agregarProductoAlCarrito(productoNuevo) {
 }
 
 //evento para vaciar el carrito
-const totalPagar = document.querySelector(`.btn-pagar`)
 totalPagar.addEventListener(`click`, () => {
   // Eliminar todos los productos del localStorage
   localStorage.removeItem('data');
@@ -122,6 +123,8 @@ totalPagar.addEventListener(`click`, () => {
     carrito.textContent = '$0.00';
     alert();
 })
+
+//alertas
 function alert() {
     Swal.fire({
         title: "Compra Realizada!!",
@@ -130,6 +133,7 @@ function alert() {
       });
 } 
 
+//alertas
 function showMessage(message, type = "success") {
     Toastify({
         text: message,
@@ -147,9 +151,7 @@ function showMessage(message, type = "success") {
       }).showToast();
 }
 
-
-const btnSwitch = document.querySelector(`#switch`);
-
+//DARK MODE
 btnSwitch.addEventListener(`click`, () => {
   document.body.classList.toggle(`dark`);
   btnSwitch.classList.toggle(`active`);

@@ -1,20 +1,32 @@
 
 //TRAIGO LOS PRODUCTOS QUE NECESITO
+
 //el contenedor de los productos del index
 const lista = document.querySelector("#lista");
 //input de la barra de busqueda
 const BusquedaInput = document.querySelector(`.barra`)
+//producto ampleado de
 const resBusqueda = document.querySelector(`.resultadoBusqueda`)
+//contenedor de los productos buscados
 const inputIndex = document.querySelector(`.container_busqueda`)
+//titulo de los productos del home
 const productosIndex = document.querySelector(`.div-tit-p`)
+//contenedor del producto ampleado 
 const productoAmpleado = document.querySelector(`#vista-previa`)
+//banner del home
 const banner = document.querySelector(`.container-banner`)
+//contenedor de resultados de busqueda
+const resultadosContainer = document.querySelector(`.resultadoBusqueda`)
+//boton del footer
+const footerBotton = document.querySelector(`.footerButton`)
+//dark mode
+const btnSwitch = document.querySelector(`#switch`);
 
 let data;
-const pedirProductos = async () => {
+const orderProducts = async () => {
   const resp = await fetch("./js/productos.json");
-   data = await resp.json();
-   productoAmpleado.style.display = "none";
+  data = await resp.json();
+  productoAmpleado.style.display = "none";
   data.forEach((producto) => {
     const div = document.createElement("div");
     if (producto.descuento) {
@@ -48,11 +60,11 @@ const pedirProductos = async () => {
      div.addEventListener("click", (event) => {
        // Verifica si el clic proviene del botón-carrito
       if (!event.target.classList.contains("boton-carrito")) {
-        abrir(producto);
+        open(producto);
       }
     });
 
-    // Agregar event listener al botón de cada producto
+// Agregar event listener al botón de cada producto
 const botonCarrito = div.querySelector(".boton-carrito");
 botonCarrito.addEventListener("click", (event) => {
     // Detiene la propagación del evento para que no llegue al contenedor
@@ -79,27 +91,22 @@ botonCarrito.addEventListener("click", (event) => {
     lista.append(div);
   });
 };
-pedirProductos();
+orderProducts();
 
 
 //BARRA DE BUSQUEDA
 
-
 // Añade el contenedor para los resultados de búsqueda antes de resBusqueda
-const resultadosContainer = document.querySelector(`.resultadoBusqueda`)
 const parentElement = resBusqueda.parentElement;
 parentElement.insertBefore(resultadosContainer, resBusqueda.nextSibling);
 
 // Añade el evento de escucha al input de búsqueda
 BusquedaInput.addEventListener('input', () => {
   const terminoBusqueda = BusquedaInput.value.toLowerCase();
-
   // Resto del código para filtrar productos
   const productosFiltrados = data.filter(producto => producto.nombre.toLowerCase().includes(terminoBusqueda));
-
   // Limpia el contenido actual del contenedor de resultados
   resultadosContainer.innerHTML = '';
-
   // Verifica si hay algún término de búsqueda antes de mostrar los resultados
   if (terminoBusqueda.trim() !== '') {
     // Muestra los productos filtrados en el contenedor de resultados
@@ -119,7 +126,7 @@ BusquedaInput.addEventListener('input', () => {
       // Agrega el evento click a cada elemento de resultado de búsqueda
       divResultado.addEventListener('click', () => {
         // Ejecuta la función ampliar al hacer clic y pasa el producto como parámetro
-        abrir(producto);
+        open(producto);
       });
 
       resultadosContainer.appendChild(divResultado);
@@ -129,7 +136,7 @@ BusquedaInput.addEventListener('input', () => {
 
 
 // Producto Ampliado
-function abrir(producto) {
+function open(producto) {
   // Establece la posición de desplazamiento al principio de la página
   window.scrollTo({
     top: 0,
@@ -191,7 +198,6 @@ function showMessage(message, type = "success") {
 }
 
 //boton del footer email
-const footerBotton = document.querySelector(`.footerButton`)
 footerBotton.addEventListener(`click`, () => {
   Swal.fire({
     title: "Enviamos un Mail al Correo!!",
@@ -200,26 +206,24 @@ footerBotton.addEventListener(`click`, () => {
   });
 })
 
-        // Función para desplazamiento de los enlaces del nav
-        function scrollToElement(element) {
-            window.scroll({
-                behavior: 'smooth',
-                left: 0,
-                top: element.offsetTop
-            });
-        }
+// Función para desplazamiento de los enlaces del nav
+function scrollToElement(element) {
+  window.scroll({
+  behavior: 'smooth',
+  left: 0,
+  top: element.offsetTop
+  });
+}
 
-        // Manejador de eventos para hacer que el enlace despliegue suavemente hacia el elemento con el ID "destino"
-        document.querySelector('[href="#destino"]').addEventListener('click', function (e) {
-            e.preventDefault(); // Evita el comportamiento predeterminado del enlace (navegación)
-            const destino = document.getElementById('destino');
-            scrollToElement(destino);
-        });
+// Manejador de eventos para hacer que el enlace despliegue suavemente hacia el elemento con el ID "destino"
+  document.querySelector('[href="#destino"]').addEventListener('click', function (e) {
+  e.preventDefault(); // Evita el comportamiento predeterminado del enlace (navegación)
+  const destino = document.getElementById('destino');
+  scrollToElement(destino);
+});
 
-const btnSwitch = document.querySelector(`#switch`);
-
+//DARK MODE
 btnSwitch.addEventListener(`click`, () => {
   document.body.classList.toggle(`dark`);
   btnSwitch.classList.toggle(`active`);
-
 })
